@@ -18,17 +18,12 @@ public class Radio_Transmitters {
         int numOfTransmitters = 0;
         int i = 0;
         
-        /* Key is to use greedy algorithm to always place the transmitter at the house furthest to the right possible 
-	    * to cover the range.
-        */
+      
         while (i < n) {
             numOfTransmitters++;
             int loc = x[i] + k;
-            
-            //go to right as far as we cover i_orig as well.
             while (i < n && x[i] <= loc) i++;
-            loc = x[--i] + k; // this is where we place the transmitter
-            //now go to the right of x[i] by k because transmitter at x[i] covers houses to its right as well. 
+            loc = x[--i] + k;  
             while (i < n && x[i] <= loc) i++;
         }
         System.out.println(numOfTransmitters);
