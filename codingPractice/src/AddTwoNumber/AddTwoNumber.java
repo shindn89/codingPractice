@@ -41,6 +41,7 @@ public class AddTwoNumber {
 		System.out.println("test3");
 		System.out.println("test4");
 		System.out.println("test5 - using command");
+		System.out.println("test6 - another command");
 	}
 
 }
