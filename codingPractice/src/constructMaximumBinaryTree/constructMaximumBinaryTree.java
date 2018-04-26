@@ -29,7 +29,8 @@ public class constructMaximumBinaryTree {
         return stack.isEmpty() ? null : stack.get(0);
 	}
 		
-	
+	//need work again, need another helper function that send left subtree and right subtree
+	//
 	public static TreeNode constructMaximumBinaryTree(int[] nums) {
 		if(nums.length ==0) return null;
 		if(nums.length == 1) return new TreeNode(nums[0]);
