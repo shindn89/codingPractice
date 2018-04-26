@@ -7,8 +7,9 @@ import BinaryTreePruning.TreeNode;
 public class constructMaximumBinaryTree {
 	public static TreeNode constructMaximumBinaryTreeN(int[] nums)
 	{
-		if(nums.length ==0) return null;
-		if(nums.length == 1) return new TreeNode(nums[0]);
+		// not necessary - since we can return null when stack is empty
+		//if(nums.length ==0) return null;
+		//if(nums.length == 1) return new TreeNode(nums[0]);
 		
         Stack<TreeNode> stack = new Stack<>();
         for(int i = 0; i < nums.length; i++)
