@@ -1,5 +1,8 @@
 package constructMaximumBinaryTree;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 import BinaryTreePruning.TreeNode;
@@ -75,7 +78,15 @@ public class constructMaximumBinaryTree {
 		TreeNode.printTree(constructMaximumBinaryTreeN(b));
 		//TreeNode k = new TreeNode(3);
 		//k.right = new TreeNode(2);
-		//TreeNode.printTree(k);
+		//TreeNode.printTree(k);ArrayList<Integer> output = new ArrayList<>();
+		ArrayList<Integer> output = new ArrayList<>();
+		output.add(0);
+		output.get(0);
+		output.size();
+		Map<Integer, Integer> map = new HashMap<>();
+		map.containsKey(2);
+		//Map.Entry<K, V>
+		
 	}
 
 
