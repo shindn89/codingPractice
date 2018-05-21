@@ -15,6 +15,7 @@ public class TreeNode {
 		 System.out.println(root.val);
 		 if(root.right != null)
 			 printTree(root.right);
+		 
 	 }
 
 }
