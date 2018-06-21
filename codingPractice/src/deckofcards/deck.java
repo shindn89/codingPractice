@@ -79,6 +79,8 @@ public class deck {
 		for(card z : d.getCards()) {
 			System.out.println(z);
 		}
+		
+		
 		String b = "b";
 		char f = 'k';
 		String v = f+b;
@@ -94,7 +96,13 @@ public class deck {
 		for(card z: total.getCards()) {
 			
 		}*/
-
+		int k = 0;
+		k ^=9;
+		System.out.println(k);
+		k^=3;
+		System.out.println(k);
+		k &= -k;
+		System.out.println(k);
 	}
 
 }
