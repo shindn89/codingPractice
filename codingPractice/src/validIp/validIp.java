@@ -23,36 +23,44 @@ Explanation: This is neither a IPv4 address nor a IPv6 address.
 
 	 */
 	
-	public static String validIPAddress(String IP) {
+    public static String validIPAddress(String IP) {
         String ipv4 = "IPv4";
         String ipv6 = "IPv6";
-        String neither = "NEITHER";
-        if(IP.contains(".") && validIP4(IP)) {
-        	return ipv4;
-        }else if (IP.contains(":") && validIP6(IP)) {
-        	return ipv6;
-        }else {
-        	return neither;
-        }
+        String neither = "Neither";
+        if(IP.contains(".") && validIP4(IP))
+            return ipv4;
+        else if (IP.contains(":") && validIP6(IP))
+            return ipv6;
+        else
+            return neither;	
+
     }
 	private static boolean validIP4(String IP) {
-		String[] checker = IP.split("/.");
-		//System.out.println(checker[0]);
-		System.out.println(checker);
+		String[] checker = IP.split("\\.",-1);
 		if(checker.length != 4) return false;
-		for(int i = 0; i < checker.length; i++) {
-			if(checker[i].charAt(0) == '0')
-				return false;
-			int isValid = Integer.parseInt(checker[i]);
-			if(isValid > 255)
-				return false;
+		for(String s : checker) {
+			if(s.length() ==0 || s.length() >3) return false;
+			if(s.startsWith("0") && s.length()>1) return false;
+			int val = 0;
+			for(char c : s.toCharArray()) {
+				if(c<'0'||c>'9') return false;
+				val = val*10 + (c-'0');
+				if(val>=256) return false;
+			}
 		}
 		return true;
 	}
 	private static boolean validIP6(String IP) {
-		return false;
+		String[] sa = IP.split("\\:",-1);
+        if(sa.length != 8) return false;
+        for(String s : sa) {
+            if(s.length()==0 || s.length()>4) return false;
+            for(char c :s.toCharArray()){
+                if((c<'a' || c>'f') && (c<'A' || c>'F') && (c<'0' || c>'9')) return false;
+            }
+        }
+        return true; 
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(validIPAddress("256.256.256.256"));
